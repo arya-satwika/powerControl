@@ -21,11 +21,6 @@ PluginComponent {
     property string currentIcon: icons[PowerProfile.toString(PowerProfiles.profile)]
 
     
-    Component.onCompleted: {
-        // getprofile.running=true
-    }
-
-
     function cycleProfiles(){
         if (hasPerformance) {
             PowerProfiles.profile = changeProfileTo

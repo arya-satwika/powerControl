@@ -2,12 +2,12 @@
   "id": "powerControl",
   "name": "Power Control",
   "description": "Cycle between power profiles right on the bar",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "aryas",
   "icon": "bolt",
   "type": "widget",
   "component": "./BarWidget.qml",
   "settings": "./Settings.qml",
-  "dependencies": ["powerprofilesctl"],
-  "permissions": ["process", "settings_read", "settings_write"]
+  "dependencies": [],
+  "permissions": [ "settings_read", "settings_write"]
 }
