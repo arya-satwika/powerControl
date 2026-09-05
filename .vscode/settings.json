@@ -1,4 +1,6 @@
 {
+    "qt-qml.doNotAskForQmllsDownload": true,
+    "qt-qml.qmlls.customExePath": "/usr/lib/qt6/bin/qmlls",
     "emeraldwalk.runonsave": {
         "commands": 
         [

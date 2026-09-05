@@ -9,5 +9,5 @@
   "component": "./BarWidget.qml",
   "settings": "./Settings.qml",
   "dependencies": ["powerprofilesctl"],
-  "permissions": ["process"]
+  "permissions": ["process", "settings_read", "settings_write"]
 }

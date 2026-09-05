@@ -5,11 +5,11 @@ import qs.Widgets
 
 PluginSettings {
     id: root
-    pluginId: "colorDemo"
+    pluginId: "powerControl"
 
     StyledText {
         width: parent.width
-        text: "Color Demo Settings"
+        text: "Cycle Order"
         font.pixelSize: Theme.fontSizeLarge
         font.weight: Font.Bold
         color: Theme.surfaceText
@@ -17,11 +17,13 @@ PluginSettings {
 
     StyledText {
         width: parent.width
-        text: "Pick colors for your widget"
-        font.pixelSize: Theme.fontSizeSmall
-        color: Theme.surfaceVariantText
-        wrapMode: Text.WordWrap
+        text: "Change the order of power profiles when cycling"
+        font.pixelSize: Theme.fontSizeMedium
+        font.weight: Font.Bold
+        color: Theme.surfaceText
     }
+
+
 
     SliderSetting {
         settingKey: "updateInterval"
@@ -39,7 +41,7 @@ PluginSettings {
         description: "Display widget in DankBar"
         defaultValue: true
     }
-
+    
     StringSetting {
         settingKey: "apiKey"
         label: "API Key"
