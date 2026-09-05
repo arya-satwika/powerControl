@@ -5,7 +5,6 @@ import qs.Widgets
 import qs.Modules.Plugins
 import qs.Services
 import Quickshell.Services.UPower
-// import Quickshell.Io
 
 PluginComponent {
     id: root
@@ -20,20 +19,6 @@ PluginComponent {
     property PowerProfile currentProfile: PowerProfiles.profile
     property bool hasPerformance: PowerProfiles.hasPerformanceProfile
     property string currentIcon: icons[PowerProfile.toString(PowerProfiles.profile)]
-    // Process {
-    //     id: getprofile
-    //     command:["powerprofilesctl", "get" ]
-    //     stdout: StdioCollector {
-    //         onStreamFinished: root.currentProfile=text.trim()
-    //     }
-    // }
-    // Process {
-    //     id: changeprofile
-    //     command:["powerprofilesctl", "set", root.changeProfileTo ]
-    //     stdout: StdioCollector {
-    //         onStreamFinished: root.currentProfile=root.changeProfileTo
-    //     }
-    // }
 
     
     Component.onCompleted: {
@@ -44,15 +29,6 @@ PluginComponent {
     function cycleProfiles(){
         if (hasPerformance) {
             PowerProfiles.profile = changeProfileTo
-        }
-    }
-    Connections {
-        target: PowerProfiles
-        // exact signal name depends on the binding — often property change
-        function onProfileChanged() {
-           console.debug(PowerProfiles.profile.toString(PowerProfile.Balanced))
-        //    ToastService.showInfo(PowerProfile.toString(PowerProfile.PowerSaver))
-           Log.warn(PowerProfile.Balanced)
         }
     }
 
@@ -68,9 +44,7 @@ PluginComponent {
                     cursorShape: Qt.PointingHandCursor
                     anchors.fill:parent
                     onClicked: {
-                        ToastService.showInfo(root.profilesLists.indexOf(PowerProfiles.profile))
                         root.cycleProfiles()
-                        Log.warn(PowerProfiles.profile.toString(PowerProfile.Balanced))
                         
                     }
                     hoverEnabled: true
