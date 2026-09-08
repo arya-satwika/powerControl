@@ -54,8 +54,8 @@ PluginComponent {
             DankIcon{
                 name: root.currentIcon
                 size: Theme.fontSizeXLarge
-                implicitHeight: Theme.fontSizeXLarge
                 color: Theme.secondary
+                implicitHeight: Theme.fontSizeXLarge
                 filled: true
                 MouseArea{
                     cursorShape: Qt.PointingHandCursor
