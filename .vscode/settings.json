@@ -1,6 +1,7 @@
 {
     "qt-qml.doNotAskForQmllsDownload": true,
     "qt-qml.qmlls.customExePath": "/usr/lib/qt6/bin/qmlls",
+    "files.autoSave": "off",
     "emeraldwalk.runonsave": {
         "commands": 
         [
@@ -8,7 +9,12 @@
                 // Run whenever any file is saved
                 "match": ".qml",
                 "cmd": "dms ipc call plugins reload powerControl",
+            },
+            {
+                "match": "Settings.qml",
+                "cmd": "dms restart",
             }
+            
         ]
     }
 }

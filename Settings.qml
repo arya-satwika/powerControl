@@ -2,10 +2,32 @@ import QtQuick
 import qs.Common
 import qs.Modules.Plugins
 import qs.Widgets
+import Quickshell.Services.UPower
 
 PluginSettings {
     id: root
     pluginId: "powerControl"
+    property var profilesOrder: [PowerProfile.PowerSaver, PowerProfile.Balanced, PowerProfile.Performance]
+    
+
+    ListModel{
+        id: profiles
+        ListElement{
+            profile: PowerProfile.PowerSaver
+            icon: "eco"
+            isSkipped: false
+        }
+        ListElement{
+            profile: PowerProfile.Balanced
+            icon: "balance"
+            isSkipped: false
+        }
+        ListElement{
+            profile: PowerProfile.Balanced
+            icon: "bolt"
+            isSkipped: false
+        }
+    }
 
     StyledText {
         width: parent.width
@@ -22,7 +44,23 @@ PluginSettings {
         font.weight: Font.Bold
         color: Theme.surfaceText
     }
+    Component{
+        id: profilesDelegate
+        StyledText{
+            required property string icon
+            text:icon
+        }
+    }
+    ListView{
+        model: profiles
+        delegate: profilesDelegate
+    }
+    // have the order of the cycler in an array 
+    // make a lists with contents in that array
+    // have each profile be toggleable on/off to skip them in the order
 
+    // icon color customizer preferably based on the DMS colorscheme
+    // also have the icon color be fully custom
 
 
     SliderSetting {
