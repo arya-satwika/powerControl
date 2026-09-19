@@ -32,7 +32,7 @@ PluginComponent {
             DankIcon{
                 name: root.currentIcon
                 size: Theme.fontSizeXLarge
-                color: Theme.secondary
+                color: Theme.primary
                 implicitHeight: Theme.fontSizeXLarge
                 filled: true
                 MouseArea{
@@ -54,7 +54,7 @@ PluginComponent {
             DankIcon{
                 name: root.currentIcon
                 size: Theme.fontSizeXLarge
-                color: Theme.secondary
+                color: Theme.primary
                 implicitHeight: Theme.fontSizeXLarge
                 filled: true
                 MouseArea{

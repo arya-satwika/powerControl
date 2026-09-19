@@ -7,7 +7,6 @@
   "icon": "bolt",
   "type": "widget",
   "component": "./BarWidget.qml",
-  "settings": "./Settings.qml",
   "dependencies": [],
   "permissions": [ "settings_read", "settings_write"]
 }
